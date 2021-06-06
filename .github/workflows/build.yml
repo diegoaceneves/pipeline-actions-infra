@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Packer build
-        uses: riznob/packer-build-action@v1.1
+        uses: diegoaceneves/docker-packer-ansible
         with:
           templateFile: 'packer/main.pkr.hcl'
           varFile: 'packer/variables.hcl'
