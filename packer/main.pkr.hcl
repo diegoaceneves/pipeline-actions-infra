@@ -36,8 +36,8 @@ build {
         "source.amazon-ebs.ubuntu"
     ]
     provisioner "ansible" {
-        playbook_file = "../ansible/playbook.yml"
-        galaxy_file = "../ansible/requirements.yml"
+        playbook_file = "ansible/playbook.yml"
+        galaxy_file = "ansible/requirements.yml"
         user = "ubuntu"
         ansible_env_vars = [
             "ANSIBLE_HOST_KEY_CHECKING=False"
