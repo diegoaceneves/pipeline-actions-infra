@@ -1,0 +1,2 @@
+- src: https://github.com/diegoaceneves/ansible-apache2.git
+  scm: git
