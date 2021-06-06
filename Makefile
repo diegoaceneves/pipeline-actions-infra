@@ -45,7 +45,7 @@ terraform-sh: ## terraform console
 	  docker run -it --rm -v $$PWD:/app -v $$HOME/.ssh/:/root/.ssh/ -w /app/ -e TF_VAR_github_token=$$TF_VAR_github_token -e TF_VAR_github_owner=$$TF_VAR_github_owner --entrypoint "" hashicorp/terraform:$(TERRAFORM_VERSION) sh
 
 packer-build: ## packer build
-	  docker run -it --rm -v $$PWD:/app -v $$HOME/.ssh/:/root/.ssh/ -w /app/ -e AWS_ACCESS_KEY_ID=$$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$$AWS_SECRET_ACCESS_KEY  diegoaceneves/packer-ansible build -var-file=/app/packer/variables.json /app/packer/main.json
+	  docker run -it --rm -v $$PWD:/app -v $$HOME/.ssh/:/root/.ssh/ -w /app/ -e AWS_ACCESS_KEY_ID=$$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$$AWS_SECRET_ACCESS_KEY  diegoaceneves/packer-ansible build -var-file=/app/packer/variables.hcl /app/packer/main.pkr.hcl
 
 packer-sh: ## packer console
 	  docker run -it --rm -v $$PWD:/app -v $$HOME/.ssh/:/root/.ssh/ -w /app/ -e AWS_ACCESS_KEY_ID=$$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$$AWS_SECRET_ACCESS_KEY  --entrypoint "" diegoaceneves/packer-ansible sh
